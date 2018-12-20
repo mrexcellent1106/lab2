@@ -1,0 +1,13 @@
+all: lab.o mylib.o
+	gcc -o inventor lab.o mylib.o
+
+lab.o: lab.c mylib.h
+	gcc -c lab.c
+
+mylib.o: mylib.c mylib.h
+	gcc -c mylib.c
+
+clean:
+	rm -rf lib.o
+test:
+	./inventor 5 3 +
